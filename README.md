@@ -7,7 +7,6 @@ you need Node 18 or geater to use install all the packages without any issues.
 - clone the project
 - npm install
 - npm run dev to run the project in dev mode
-- npm run test to run all tests
 
 ## 2. Tools and tech
 
@@ -15,7 +14,6 @@ you need Node 18 or geater to use install all the packages without any issues.
 - **Vite V4**
 - **React-router-dom V6**
 - **Redux V9 and  redux/toolkit V2**
-- **Vitest, testing-library/react for testing**
 
 ## 3. Folder Architecture
 
@@ -53,6 +51,10 @@ containes every endpoint feature, slices/reducers and actions.
 
 ## 4 Some important informations
 
+### <span style="color: red">NOTE !!</span>
+
+<span style="color: red">The banner animation starts when you select one</span>
+
 ### 4.1 Reasons to use Redux
 
 For this project i used redux to simplify my global state management ***( It's not a large scale app but i preffer to start with if app will grow up to large scale )***. I Could use context or props drilling but for more readability, maintability and performance i prefered to use Redux.
@@ -61,13 +63,7 @@ Also i used the ***createAsyncThunk (toolkit-thunk-middlware)*** for all my endp
 
 I didn't use ***RTK-Query*** for a reason, we can discuss that.  
 
-### 4.2 Tests
-
-I wrote two simple and not robuste tests just for me to test the display of my two components.
-
-To achieve this i used ***vitest*** because i'm using vite event if jest is a better choice and also ***testing-library/react*** for rendering my components.
-
-### 5 Dockerizing and serve the app
+### 4.2 Dockerizing and serve the app
 
 - I used two ***DockerFile***: One for **dev env** and the other one for **prod env**.
 - In prod-DockerFile i used to nginx to serve the serve the image inside containers. 

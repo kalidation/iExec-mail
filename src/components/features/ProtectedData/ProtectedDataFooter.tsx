@@ -45,7 +45,7 @@ const ProtectedDataFooter = (props: IProps) => {
     );
   }
 
-  if (protectedData) {
+  if (protectedData?.length) {
     if (selectedProtectedData) {
       return (
         <ProtectedDataSelectedFooter
@@ -55,7 +55,7 @@ const ProtectedDataFooter = (props: IProps) => {
         />
       );
     }
-  } else {
+  } else { 
     return (
       <Button
         label={"Protect my Address"}

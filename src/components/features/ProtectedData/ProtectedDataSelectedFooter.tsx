@@ -2,6 +2,7 @@ import { Button } from "../../common/Button/Button";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 import { addIcon } from "../../../assets/images";
 import { useTranslation } from "react-i18next";
+import { COLORS } from "../../../utils/constants";
 
 interface IProps {
   handleForme: () => void;
@@ -9,16 +10,16 @@ interface IProps {
   handleGrantAccess: () => void;
 }
 
-const AddNew = (): JSX.Element => (
+const AddNew = ({ title }: { title: string }): JSX.Element => (
   <>
     <img src={addIcon} height={16} width={16} />
     <span
       style={{
         textDecoration: "underline",
-        color: "#FCD15A",
+        color: COLORS.yellow,
       }}
     >
-      Add new
+      {title}
     </span>
   </>
 );
@@ -31,7 +32,7 @@ const ProtectedDataSelectedFooter = (props: IProps) => {
   return (
     <div className="add-new-container">
       <div className="add-new" onClick={handleForme}>
-        <AddNew />
+        <AddNew title={t("protected-data.add-new")} />
       </div>
       <div className="add-new-button-group">
         <Button
@@ -47,7 +48,7 @@ const ProtectedDataSelectedFooter = (props: IProps) => {
           label={
             isLoading ? t("button.iniitalizing") : t("button.share-access")
           }
-          style={{ backgroundColor: "#FCD15A" }}
+          style={{ backgroundColor: COLORS.yellow }}
           onClick={handleGrantAccess}
           isAnimateHover
           isActive={!isLoading}

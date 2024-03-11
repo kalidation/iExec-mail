@@ -36,20 +36,24 @@ const ProtectedDataContent = (props: IProps) => {
     if (!protectedData?.length) {
       if (isForm) {
         return (
-          <div data-testId="form-protect-message">
+          <div data-testid="form-protect-message">
             {t("protected-data.protect-data-message")}
           </div>
         );
       } else {
         return (
-          <div data-testId="no-data-message">
+          <div data-testid="no-data-message">
             {t("protected-data.no-protected-data")}
           </div>
         );
       }
+    } else if (isForm) {
+      return (
+        <div data-testid="form-protect-message">
+          {t("protected-data.protect-data-message")}
+        </div>
+      );
     }
-
-    return null;
   };
 
   return (
