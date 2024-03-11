@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes, useRef } from "react";
 import "./Button.css";
+import { COLORS } from "../../../utils/constants";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
@@ -35,7 +36,7 @@ export const Button = (props: IProps) => {
           : "button-not-animated"
       }
       style={{
-        backgroundColor: isActive ? "#FCD15A" : "#DAC17C",
+        backgroundColor: isActive ? COLORS.yellow : COLORS.yellowDisabled,
         ...style,
       }}
       disabled={!isActive}
