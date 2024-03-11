@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish";
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-image: url(./assets/images/background.png);
+  background-size: auto;
+}
+
+h1,
+h3,
+p {
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+}
+
+:root {
+  --black: #1D1D24;
+  --pink: #CE2C68;
+  --purple: #3F0D3F;
+  --yellow: #FCD15A;
+  /* same as #1D1D24 with 6% opacity */
+  --black-opacity: rgba(29, 29, 29, 0.06);
+  --white-gradient: #82828E
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: local("Mulish"),
+    url("./assets/fonts/Mulish-Regular.ttf") format("truetype");
+  font-weight: bold;
+}

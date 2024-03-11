@@ -1,0 +1,12 @@
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+main {
+  height: calc(100vh - 56px);
+  margin-top: 55px;
+}
