@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./Card.css";
 
 interface IProps {
@@ -8,6 +9,7 @@ interface IProps {
 
 const Card = (props: IProps) => {
   const { user, content, footer } = props;
+  const { t } = useTranslation("enNS");
 
   return (
     <div className="card">
@@ -17,11 +19,11 @@ const Card = (props: IProps) => {
             alignSelf: "start",
           }}
         >
-          Grant Access
+          {t("card.grant-access")}
         </h1>
         <p className="card-user">
-          <span>{user}</span> would like to get access to you, using iExec
-          secured email service.
+          <span>{user}</span>
+          {" " + t("card.user-access")}
         </p>
         <div className="card-content">{content}</div>
         <div className="card-footer">{footer}</div>

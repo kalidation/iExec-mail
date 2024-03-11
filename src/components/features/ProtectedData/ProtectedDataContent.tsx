@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 import { ProtectedDataForm } from "./ProtectedDataForm";
 import ProtectedDataList from "./ProtectedDataList";
@@ -29,25 +30,26 @@ const ProtectedDataContent = (props: IProps) => {
     fetchProtectedDataState: { data: protectedData },
   } = useAppSelector((state) => state.data);
 
+  const { t } = useTranslation("enNS");
+
   const renderMessageInfo = () => {
     if (!protectedData?.length) {
       if (isForm) {
         return (
           <div data-testId="form-protect-message">
-            Protect your address with iExec. Your email address stays secret,
-            only your name will be shared with the organization.
+            {t("protected-data.protect-data-message")}
           </div>
         );
       } else {
         return (
           <div data-testId="no-data-message">
-            You have no protected address yet
+            {t("protected-data.no-protected-data")}
           </div>
         );
       }
     }
 
-    return null
+    return null;
   };
 
   return (

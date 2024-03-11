@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 import { Button } from "../../common/Button/Button";
 import { useAuth } from "../../../redux/features/Auth/useAuth";
@@ -18,6 +19,8 @@ const Header = () => {
 
   const { connectToMetaMask } = useAuth();
 
+  const { t } = useTranslation("enNS");
+
   return (
     <header className="header">
       <div className="logo">
@@ -27,7 +30,9 @@ const Header = () => {
         <HeaderRight address={adress} />
       ) : (
         <Button
-          label={isLoading ? "Initializing..." : "Connect Wallet"}
+          label={
+            isLoading ? t("button.iniitalizing") : t("button.connect-wallet")
+          }
           onClick={connectToMetaMask}
           isAnimateHover
           isActive

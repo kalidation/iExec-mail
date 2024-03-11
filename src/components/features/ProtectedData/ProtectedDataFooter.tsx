@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "../../common/Button/Button";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 import ProtectedDataSelectedFooter from "./ProtectedDataSelectedFooter";
@@ -21,6 +22,8 @@ const ProtectedDataFooter = (props: IProps) => {
     handleGrantAccess,
   } = props;
 
+  const { t } = useTranslation("enNS");
+
   const {
     fetchProtectedDataState: { data: protectedData },
     protectDataState,
@@ -31,7 +34,9 @@ const ProtectedDataFooter = (props: IProps) => {
       <Button
         data-testid={"button-form"}
         label={
-          protectDataState.isLoading ? "Initializing..." : "Protect my Address"
+          protectDataState.isLoading
+            ? t("button.iniitalizing")
+            : t("button.protected-address")
         }
         onClick={handleProtectData}
         isAnimateHover

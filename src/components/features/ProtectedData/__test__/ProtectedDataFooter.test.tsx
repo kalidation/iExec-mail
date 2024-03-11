@@ -1,7 +1,6 @@
 import { vi, describe, it, expect } from "vitest";
-import { render } from "@testing-library/react";
-
 import ProtectedDataFooter from "../ProtectedDataFooter";
+import { render } from "../../../../utils/testConfig/rtl-config.tsx";
 
 vi.mock("../../../../redux/App/typedHooks.ts", async (importOriginal) => {
   const mocks = await importOriginal<

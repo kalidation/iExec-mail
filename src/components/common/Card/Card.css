@@ -57,6 +57,6 @@
 }
 
 .card-user span {
-  text-decoration: "underline";
-  color: #FCD15A,
+  text-decoration: underline;
+  color: var(--yellow);
 }

@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 
 export const AuthContent = () => {
   const auth = useAppSelector((state) => state.auth);
   const app = useAppSelector((state) => state.app);
+  const {t} = useTranslation("enNS")
 
   const renderMessage = () => {
     if (auth.isError && auth.error) {
@@ -14,7 +16,7 @@ export const AuthContent = () => {
       return app.message;
     }
    
-    return "Connect your wallet to continue.";
+    return  t("auth.connect-wallet")
   };
 
   return (

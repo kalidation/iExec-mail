@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./Banner.css";
 
 interface IProps {
@@ -10,10 +10,7 @@ interface IProps {
 
 const Banner = (props: IProps) => {
   const { name, onClick, address, isSelected } = props;
-
-  useEffect(() => {
-    console.log(isSelected);
-  }, [isSelected]);
+  const { t } = useTranslation("enNS");
 
   return (
     <div
@@ -21,7 +18,7 @@ const Banner = (props: IProps) => {
       onClick={() => onClick(address)}
     >
       <p>{name}</p>
-      <p>**email protected**</p>
+      <p>{t("banner.email-protected")}</p>
     </div>
   );
 };

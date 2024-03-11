@@ -1,6 +1,7 @@
 import { Button } from "../../common/Button/Button";
 import { useAppSelector } from "../../../redux/App/typedHooks";
 import { addIcon } from "../../../assets/images";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   handleForme: () => void;
@@ -25,6 +26,7 @@ const AddNew = (): JSX.Element => (
 const ProtectedDataSelectedFooter = (props: IProps) => {
   const { handleForme, handleSelectProtectedData, handleGrantAccess } = props;
   const { isLoading } = useAppSelector((state) => state.grantAccess);
+  const { t } = useTranslation("enNS");
 
   return (
     <div className="add-new-container">
@@ -42,7 +44,9 @@ const ProtectedDataSelectedFooter = (props: IProps) => {
           isActive
         />
         <Button
-          label={isLoading ? "Initializing..." : "Share Acccess"}
+          label={
+            isLoading ? t("button.iniitalizing") : t("button.share-access")
+          }
           style={{ backgroundColor: "#FCD15A" }}
           onClick={handleGrantAccess}
           isAnimateHover

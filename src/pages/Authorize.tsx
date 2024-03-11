@@ -1,26 +1,18 @@
 import { ProtectDataParams } from "@iexec/dataprotector";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
+import Auth from "../components/features/Auth/Auth";
 import { useAuth } from "../redux/features/Auth/useAuth";
 import { useAppSelector } from "../redux/App/typedHooks";
 import { useData } from "../redux/features/data/useData";
 import { ProtectedData } from "../components/features/ProtectedData/ProtectedData";
-
-import Auth from "../components/features/Auth/Auth";
 import { useGrantAccess } from "../redux/features/grantAccess/useGrantAccess";
-
-const Titles = (): JSX.Element => (
-  <>
-    <h2>Secret Email Service</h2>
-    <h4>
-      iExec creates the technologies for individuals and organizations to
-      create, protect and develop their digital estate.
-    </h4>
-  </>
-);
+import { AUTHORIZED_APP } from "../utils/constants";
 
 const Authorize = () => {
+  const { t } = useTranslation("enNS");
   const [searchParams] = useSearchParams();
   const user = searchParams.get("user");
 
@@ -69,7 +61,7 @@ const Authorize = () => {
   const handleGrantAccess = () => {
     if (user && selectedProctedData)
       grantAccess({
-        authorizedApp: "web3mail.apps.iexec.eth",
+        authorizedApp: AUTHORIZED_APP,
         authorizedUser: user,
         protectedData: selectedProctedData,
       });
@@ -78,7 +70,8 @@ const Authorize = () => {
   return (
     <div className="auth-container">
       <div className="auth-header">
-        <Titles />
+        <h2>{t("auth.titles.head")}</h2>
+        <h4>{t("auth.titles.sub")}</h4>
       </div>
       <div>
         {user && !app.adress && (

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Input from "../../common/Input/Input";
 
 interface IProps {
@@ -9,22 +10,23 @@ interface IProps {
 
 export const ProtectedDataForm = (props: IProps) => {
   const { email, name, handleOnChangeEmail, handleOnChangeName } = props;
+  const { t } = useTranslation("enNS");
 
   return (
     <div className="protected-data-form">
       <Input
-        label="Email Address (secret)"
+        label={t("protected-data.input-email.label")}
         name="email"
         type="email"
-        placeholder="johndoe@gmail.com"
+        placeholder={t("protected-data.input-email.placeholder")}
         value={email}
         onChange={handleOnChangeEmail}
       />
       <Input
-        label="Name (public)"
+        label={t("protected-data.input-name.label")}
         name="name"
         type="text"
-        placeholder="John Doe"
+        placeholder={t("protected-data.input-name.placeholder")}
         value={name}
         onChange={handleOnChangeName}
       />

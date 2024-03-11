@@ -1,0 +1,39 @@
+{
+  "banner": {
+    "email-protected": "**email protected**"
+  },
+  "card": {
+    "grant-access": "Grant Access",
+    "user-access": "would like to get access to you, using iExec secured email service."
+  },
+  "button": {
+    "connect-wallet": "Connect Wallet",
+    "iniitalizing": "Initializing...",
+    "protected-address": "Protect my Address",
+    "share-access": "Share Acccess",
+    "cancel": "Cancel"
+  },
+  "auth": {
+    "connect-wallet": "Connect your wallet to continue.",
+    "titles": {
+      "head": "Secret Email Service",
+      "sub": "iExec creates the technologies for individuals and organizations to create, protect and develop their digital estate."
+    }
+  },
+  "protected-data": {
+    "protect-data-message": "Protect your address with iExec. Your email address stays secret, only your name will be shared with the organization.",
+    "no-protected-data": " You have no protected address yet.",
+    "add-new": "Add new",
+    "input-email": {
+      "label": "Email Address (secret)",
+      "placeholder": "johndoe@gmail.com"
+    },
+    "input-name": {
+      "label": "Name (public)",
+      "placeholder": "John Doe"
+    }
+  },
+  "home": {
+    "authorize": "Authorize"
+  }
+}
