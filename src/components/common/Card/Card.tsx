@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import "./Card.css";
+import Typography from "../Typography/Typography";
 
 interface IProps {
   user: string;
@@ -14,17 +15,18 @@ const Card = (props: IProps) => {
   return (
     <div className="card">
       <div className="card-container">
-        <h1
+        <Typography
+          variant="h3"
           style={{
             alignSelf: "start",
           }}
         >
           {t("card.grant-access")}
-        </h1>
-        <p className="card-user">
+        </Typography>
+        <Typography variant="body2" className="card-user">
           <span>{user}</span>
           {" " + t("card.user-access")}
-        </p>
+        </Typography>
         <div className="card-content">{content}</div>
         <div className="card-footer">{footer}</div>
       </div>

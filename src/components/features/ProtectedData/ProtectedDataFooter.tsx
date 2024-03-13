@@ -17,7 +17,6 @@ const ProtectedDataFooter = (props: IProps) => {
     handleForme,
     handleProtectData,
     isForm,
-    selectedProtectedData,
     handleSelectProtectedData,
     handleGrantAccess,
   } = props;
@@ -46,7 +45,6 @@ const ProtectedDataFooter = (props: IProps) => {
   }
 
   if (protectedData?.length) {
-    if (selectedProtectedData) {
       return (
         <ProtectedDataSelectedFooter
           handleForme={handleForme}
@@ -54,7 +52,6 @@ const ProtectedDataFooter = (props: IProps) => {
           handleGrantAccess={handleGrantAccess}
         />
       );
-    }
   } else { 
     return (
       <Button

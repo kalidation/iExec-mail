@@ -10,6 +10,7 @@ import { useData } from "../redux/features/data/useData";
 import { ProtectedData } from "../components/features/ProtectedData/ProtectedData";
 import { useGrantAccess } from "../redux/features/grantAccess/useGrantAccess";
 import { AUTHORIZED_APP } from "../utils/constants";
+import Typography from "../components/common/Typography/Typography";
 
 const Authorize = () => {
   const { t } = useTranslation("enNS");
@@ -70,10 +71,12 @@ const Authorize = () => {
   return (
     <div className="auth-container">
       <div className="auth-header">
-        <h2>{t("auth.titles.head")}</h2>
-        <h4>{t("auth.titles.sub")}</h4>
+        <Typography variant="h1" >
+          {t("auth.titles.head")}
+        </Typography>
+        <Typography variant="body2">{t("auth.titles.sub")}</Typography>
       </div>
-      <div>
+      <div style={{paddingBottom: 10}}>
         {user && !app.adress && (
           <Auth
             user={user}

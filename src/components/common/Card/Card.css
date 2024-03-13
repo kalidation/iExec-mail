@@ -1,5 +1,5 @@
 .card {
-  max-height: 500px;
+  max-height: 600px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   background-color: var(--black-opacity);
   backdrop-filter: blur(1px);
   border-radius: 20px;
-  padding: 10px;
+  padding: 40px;
   color: white;
 }
 

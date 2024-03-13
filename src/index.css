@@ -25,7 +25,8 @@ p {
   --yellow: #FCD15A;
   /* same as #1D1D24 with 6% opacity */
   --black-opacity: rgba(29, 29, 29, 0.06);
-  --white-gradient: #82828E
+  --white-gradient: #82828E;
+  --header-height: 64px;
 }
 
 @font-face {

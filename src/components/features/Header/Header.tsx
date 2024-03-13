@@ -37,7 +37,9 @@ const Header = () => {
           isAnimateHover
           isActive
           style={{
-            height: 38,
+            height: "38px",
+            width: "132px",
+            fontSize: "14px",
           }}
         />
       )}
